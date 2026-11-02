@@ -74,6 +74,6 @@ To deploy by hand instead: `npm run build && npx wrangler deploy`.
 - [x] **Redirects:** old mystarma.com pages are mapped in `public/_redirects`. Add any old blog post addresses there if you want them sent to a specific page.
 - [ ] Add the GA4 measurement ID, and connect Google Search Console. Submit `https://www.mystarma.com/sitemap-index.xml`.
 - [ ] Optional: add opening hours and map coordinates for each location in `src/config/schema.ts`.
-- [ ] Drop in the remaining photos: Sage and Cristian (location and About pages) and parent pickup (After School).
+- [ ] Drop in the remaining photo: parent pickup (After School).
 
 > **Build note:** this project was converted from the approved prototype in an environment that couldn't download packages, so `astro build` hasn't been run yet. Every page was rendered from these same files and tested in a browser: links, images, forms, Get Started, the school lookup and the camp tabs all work. The first `npm run build` is the remaining check.
