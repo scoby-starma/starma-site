@@ -1,0 +1,11 @@
+{
+  // Cloudflare deployment settings: serves the built Astro site (dist/) as static files.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "starma-site",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

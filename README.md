@@ -55,19 +55,16 @@ npm run preview    # previews the finished build
 
 All forms send to the Google Apps Script in `FORM_ENDPOINT`. That script routes each submission to `westgv@` or `northgv@` based on the location the family picks ("Not sure yet" goes to West). Phone is required and email is optional. Text-message consent is recorded with the exact wording and a timestamp. If a send ever fails, the family sees the location's email and phone with their details pre-filled.
 
-## Deploy to Cloudflare Pages
+## Deploy to Cloudflare
 
-**Option A: from GitHub (recommended; deploys automatically on every change)**
-1. Put this folder in a GitHub repository.
-2. In Cloudflare: **Workers & Pages → Create → Pages → Connect to Git**, and pick the repository.
-3. Build settings: Framework preset **Astro**, build command `npm run build`, output directory `dist`.
-4. Add the custom domain `www.mystarma.com` (and redirect `mystarma.com` to it).
+The repo is connected to Cloudflare (Workers & Pages), which builds and deploys automatically on every push to `main`.
 
-**Option B: upload directly**
-```bash
-npm run build
-npx wrangler pages deploy dist --project-name starma-site
-```
+Cloudflare build settings:
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- `wrangler.jsonc` tells Cloudflare to serve the built site from `dist/`.
+
+To deploy by hand instead: `npm run build && npx wrangler deploy`.
 
 `public/_headers` adds security and caching headers. `public/_redirects` holds the redirects.
 
