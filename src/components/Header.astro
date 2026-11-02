@@ -1,0 +1,22 @@
+---
+/* Site header: exactly five nav items, with Programs as a dropdown, plus Get Started. */
+const path = Astro.url.pathname;
+const PROGRAM_LINKS = [
+  { href: '/kids-martial-arts/', label: 'Kids Martial Arts', sub: 'Ages 6–12' },
+  { href: '/teen-adult-martial-arts/', label: 'Teen & Adult Martial Arts', sub: 'Classes for older students and adults' },
+  { href: '/after-school-program/', label: 'Gainesville’s Best After School Program', sub: '' },
+  { href: '/summer-camp/', label: 'Gainesville’s Best Summer Camp', sub: '' },
+];
+const cur = (href: string) => (href === '/' ? path === '/' : path.startsWith(href)) ? 'page' : undefined;
+const inPrograms = PROGRAM_LINKS.some((l) => path.startsWith(l.href));
+---
+<header class="hd"><div class="w">
+<a class="logo" href="/" aria-label="Star Martial Arts home"><span class="lg" role="img" aria-label="Star Martial Arts"></span></a>
+<nav id="nav" aria-label="Primary"><ul>
+<li><a href="/" aria-current={cur('/')}>Home</a></li><li><a href="/about-us/" aria-current={cur('/about-us/')}>About Us</a></li><li><a href="/locations/" aria-current={cur('/locations/')}>Locations</a></li>
+<li class="dd"><button class="dt" aria-expanded="false" aria-haspopup="true" data-current={inPrograms ? 'true' : undefined}>Programs <span class="ch" aria-hidden="true">▾</span></button>
+<ul class="menu">{PROGRAM_LINKS.map((l) => <li><a href={l.href} aria-current={cur(l.href)}>{l.label}{l.sub && <small>{l.sub}</small>}</a></li>)}</ul></li>
+<li><a href="/contact-us/" aria-current={cur('/contact-us/')}>Contact Us</a></li></ul></nav>
+<button class="btn p gs" data-gs>Get Started</button>
+<button class="burger" id="bg" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+</div></header>

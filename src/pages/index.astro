@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { organizationSchema } from '../config/schema';
+const title = "Martial Arts, After School & Summer Camp in Gainesville, FL | Star Martial Arts";
+const description = "Kids, teen and adult martial arts, after school and summer camp at two Gainesville, Florida locations. Family-focused since 2006.";
+const schema = [organizationSchema()];
+---
+<BaseLayout title={title} description={description} image="/images/hero.webp" schema={schema} pageClass="pg-home">
+<section class="hero" aria-label="Welcome">
+<div class="hm has-bgi" id="hm"><img class="bgi" src="/images/hero.webp" alt="Star Martial Arts students and instructors gathered together on the mat" width="1600" height="1067" fetchpriority="high" decoding="async" style="object-position:center 35%"></div>
+<div class="w">
+<p class="lab eb">Gainesville, Florida · Since 2006</p>
+<h1>Making Champions in Life</h1>
+<p class="lead">Star Martial Arts is where Gainesville families build confidence, character, and lasting friendships, in a safe, supervised, and welcoming community.</p>
+<div class="btns"><button class="btn p" data-gs>Get Started</button><a class="btn ow" href="/locations/">Find Your Location</a></div>
+</div>
+<div class="trust"><div class="w"><span>We Over Me</span><span>Members First</span><span>Active Supervision</span></div></div>
+</section>
+
+<section class="sec" id="programs"><div class="w">
+<p class="lab eb rv">Programs</p>
+<h2 class="hdg rv" style="margin-top:14px">Find the right program for your family</h2>
+<p class="sub rv">Four programs, two Gainesville locations, one community that has your back.</p>
+<div class="pg">
+<p class="gl a">Martial Arts Classes</p><p class="gl b">Gainesville’s Best</p>
+<article class="pc k rv" id="kids"><div class="im has-bgi"><img class="bgi" src="/images/kids.webp" alt="Two young students practicing a kick and a board-holding drill in class" width="760" height="507" loading="lazy" decoding="async" style="object-position:center 40%"></div><div class="pb"><span class="tag">Kids · Ages 6–12</span><h3>Kids Martial Arts</h3><p class="pd">Structured, high-energy classes where confidence is earned, effort is celebrated, and every child is cheered on by instructors and teammates.</p><button class="btn p" data-gs data-p="kids">Start Your Trial</button><a class="lm" href="/kids-martial-arts/">Learn more about Kids Martial Arts →</a></div></article>
+<article class="pc t rv" id="adult"><div class="im has-bgi"><img class="bgi" src="/images/ta2.webp" alt="Two students training pad work in a Star Martial Arts class" width="600" height="800" loading="lazy" decoding="async" style="object-position:center 30%"></div><div class="pb"><span class="tag">Ages 13 and up</span><h3>Teen &amp; Adult Martial Arts</h3><p class="pd">Kickboxing-based classes made for ages 13 and up. Build strength, skill, and community, and leave the stress at the door, whether you’re brand new or returning to training.</p><button class="btn wb" data-gs data-p="adult">Start Your Trial</button><a class="lm" style="color:#fff" href="/teen-adult-martial-arts/">Learn more about Teen &amp; Adult →</a></div></article>
+<article class="pc f rv" id="after"><div class="im has-bgi"><img class="bgi" src="/images/as1.webp" alt="Children and a StarMA staff member holding up purple art projects" width="720" height="540" loading="lazy" decoding="async" style="object-position:center 35%"></div><div class="pb"><span class="tag">Gainesville’s Best</span><h3>Gainesville’s Best After School Program</h3><p class="pd">School pickup, active supervision, enrichment, and martial arts instruction, so your child has a great afternoon and you have peace of mind.</p><button class="btn p" data-gs data-p="after">Schedule a Tour</button><a class="lm" href="/after-school-program/">Learn more about After School →</a></div></article>
+<article class="pc s rv" id="camp"><div class="im has-bgi"><img class="bgi" src="/images/cp25.webp" alt="Three campers laughing on a tire swing at a local park" width="640" height="853" loading="lazy" decoding="async" style="object-position:center 40%"></div><div class="pb"><span class="tag">Gainesville’s Best</span><h3>Gainesville’s Best Summer Camp</h3><p class="pd">Adventure, themed weeks, new friends, and the kind of summer your kids will talk about all year, in a safe, active, and fun environment.</p><button class="btn p" data-gs data-p="camp">Explore Registration</button><a class="lm" href="/summer-camp/">Learn more about Summer Camp →</a></div></article>
+</div></div></section>
+
+<section class="sec df" id="difference"><div class="w dg">
+<div class="rv"><p class="lab eb">The StarMA Difference</p><h2 class="hdg" style="margin:14px 0 18px">More than martial arts</h2><p style="color:var(--m);font-size:18px">Our mission is to use martial arts as a vehicle to develop strong leaders, healthy bodies, and champions in life. Since 2006, we’ve done it in a clean, professional space where families feel at home.</p><a class="btn o" style="margin-top:26px" href="/locations/">Visit a Location</a></div>
+<div class="pl">
+<div class="pi ft rv"><h3>Families Grow Together</h3><p>Our life skills program brings families and students together. Every class includes a Mat Chat on our current life skill, covering how it works in class, at home, and at school, and parents join the conversation, so you stay part of your child’s progress.</p></div>
+<div class="pi rv"><h3>Earned Confidence</h3><p>Nothing is given here. Everything is earned, and we stand beside every student while they earn it.</p></div>
+<div class="pi rv"><h3>Pressure Makes Diamonds</h3><p>Students learn to handle pressure with a steady mind, and that strength carries into life.</p></div>
+<div class="pi rv"><h3>1% Growth</h3><p>We look for one small win in every class, every day. Small steps add up fast.</p></div>
+<div class="pi rv"><h3>Active Supervision</h3><p>Our team stays engaged and aware, so parents can feel confident their children are safe and cared for.</p></div>
+<div class="pi rv"><h3>We Over Me</h3><p>Students learn to lift each other up. Our culture rewards teamwork, kindness, and effort.</p></div>
+<div class="pi rv"><h3>Members First</h3><p>We take accountability and take care of our members. Every decision starts with what is best for students and families.</p></div>
+</div></div></section>
+
+<section class="sec dk" id="gallery"><div class="w">
+<p class="lab eb rv">StarMA in Action</p><h2 class="hdg rv" style="margin-top:14px">See the energy for yourself</h2>
+<div class="gal">
+<div class="im big has-bgi"><img class="bgi" src="/images/g1.webp" alt="Students lined up at attention at the start of class" width="1100" height="733" loading="lazy" decoding="async" style="object-position:center"></div><div class="im has-bgi"><img class="bgi" src="/images/g2.webp" alt="A smiling student holding a championship belt overhead" width="560" height="840" loading="lazy" decoding="async" style="object-position:center 30%"></div><div class="im has-bgi"><img class="bgi" src="/images/g3.webp" alt="An instructor talking with a circle of seated students" width="700" height="467" loading="lazy" decoding="async" style="object-position:center"></div><div class="im has-bgi"><img class="bgi" src="/images/g4.webp" alt="A student throwing a punch during class" width="560" height="840" loading="lazy" decoding="async" style="object-position:center 38%"></div><div class="im has-bgi"><img class="bgi" src="/images/g5.webp" alt="A smiling student with arms crossed in front of the Star Martial Arts backdrop" width="700" height="525" loading="lazy" decoding="async" style="object-position:center 30%"></div>
+</div></div></section>
+
+<section class="sec" id="home-locations"><div class="w">
+<p class="lab eb rv">Locations</p><h2 class="hdg rv" style="margin-top:14px">Two Gainesville locations</h2>
+<div class="lg2">
+<article class="lc rv"><div class="im has-bgi" style="height:auto;min-height:220px;"><img class="bgi" src="/images/mapw.webp" alt="Map showing Star Martial Arts West Gainesville" width="900" height="734" loading="lazy" decoding="async" style="object-position:center"></div><div class="pb"><h3>West Gainesville</h3><p>500 NW 60th St, Suite A<br>Gainesville, FL 32607<br><a href="tel:3525051499">352-505-1499</a></p><div class="btns"><a class="btn p" href="https://www.google.com/maps/search/?api=1&amp;query=500+NW+60th+St+Suite+A+Gainesville+FL+32607" target="_blank" rel="noopener">Get Directions</a><a class="btn o" href="tel:3525051499">Call</a><a class="btn o" href="/locations/west-gainesville/">Location Details</a></div></div></article>
+<article class="lc rv"><div class="im has-bgi" style="height:auto;min-height:220px;"><img class="bgi" src="/images/mapn.webp" alt="Map showing Star Martial Arts North Gainesville" width="900" height="799" loading="lazy" decoding="async" style="object-position:center"></div><div class="pb"><h3>North Gainesville</h3><p>5000 NW 34th Blvd, Suite 5<br>Gainesville, FL 32605<br><a href="tel:3526726356">352-672-6356</a></p><div class="btns"><a class="btn p" href="https://www.google.com/maps/search/?api=1&amp;query=5000+NW+34th+Blvd+Suite+5+Gainesville+FL+32605" target="_blank" rel="noopener">Get Directions</a><a class="btn o" href="tel:3526726356">Call</a><a class="btn o" href="/locations/north-gainesville/">Location Details</a></div></div></article>
+</div></div></section>
+
+<LeadForm page="home" />
+<section class="sec fin" id="contact"><div class="w rv">
+<h2>Ready to see what Star can do for your family?</h2>
+<p>Choose a program and a location, and we’ll point you to the right next step.</p>
+<div class="btns"><button class="btn p" data-gs>Get Started</button><a class="btn ow" href="tel:3525051499">Call West</a><a class="btn ow" href="tel:3526726356">Call North</a></div>
+</div></section>
+</BaseLayout>

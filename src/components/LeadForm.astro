@@ -1,0 +1,40 @@
+---
+/*
+ * "Get more info. No commitment." form shown near the bottom of most pages.
+ * Submissions are sent by src/scripts/site.ts to the Google Apps Script in src/config/site.ts.
+ */
+import SmsConsent from './SmsConsent.astro';
+
+interface Props {
+  /** Which page this form is on: home, kids, adult, after, camp, about, west, north */
+  page: string;
+}
+const { page } = Astro.props;
+const id = `ld-${page}`;
+
+const OPTIONS = [
+  'Not sure yet',
+  'Kids Martial Arts (ages 6–12)',
+  'Teen & Adult Martial Arts (13+)',
+  'After School Program',
+  'Summer Camp',
+];
+const PRESELECT: Record<string, string> = {
+  kids: 'Kids Martial Arts (ages 6–12)',
+  adult: 'Teen & Adult Martial Arts (13+)',
+  after: 'After School Program',
+  camp: 'Summer Camp',
+};
+const selected = PRESELECT[page] ?? 'Not sure yet';
+const loc = page === 'west' || page === 'north' ? page : 'unsure';
+---
+<section class="sec ld" id={`${id}-s`}><div class="w"><div class="ldg"><div><p class="lab eb">Not ready for a tour?</p><h2 class="hdg" style="margin:14px 0 16px">Get more info. No commitment.</h2><p style="font-size:18px;color:#444;max-width:480px">Just want to learn more first? Tell us what you’re interested in and we’ll send details. No tour, no pressure.</p></div>
+<form id={id} novalidate><label for={`${id}-n`}>Your name</label><input id={`${id}-n`} name="name" autocomplete="name" required><p class="er" role="alert"></p>
+<label for={`${id}-e`}>Email address (optional)</label><input id={`${id}-e`} name="email" type="email" autocomplete="email"><p class="er" role="alert"></p>
+<label for={`${id}-p`}>Phone number</label><input id={`${id}-p`} name="phone" type="tel" autocomplete="tel" required><p class="er" role="alert"></p>
+<label for={`${id}-i`}>I’m interested in</label><select id={`${id}-i`} name="interest">{OPTIONS.map((o) => <option selected={o === selected}>{o}</option>)}</select>
+<fieldset><legend>Preferred location</legend><div class="rdl"><label><input type="radio" name="loc" value="West Gainesville" checked={loc === 'west'}> West</label><label><input type="radio" name="loc" value="North Gainesville" checked={loc === 'north'}> North</label><label><input type="radio" name="loc" value="Not sure yet" checked={loc === 'unsure'}> Not sure yet</label></div></fieldset>
+<label for={`${id}-q`}>Questions (optional)</label><textarea id={`${id}-q`} name="q" rows="3"></textarea>
+<SmsConsent name="sms" />
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn p" type="submit">Send Me Info</button><p class="ln">We use your information only to respond to your request. We never sell or share your phone number for marketing.</p><div class="ls" role="status" aria-live="polite"></div></form></div></div></section>

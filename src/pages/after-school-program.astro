@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import SmsConsent from '../components/SmsConsent.astro';
+import { SCHOOLS } from '../config/site';
+const schoolsFor = (k: string) => SCHOOLS.filter((s) => (s[2] as string[]).includes(k)).map((s) => s[0] as string);
+const title = "After School Program with School Pickup in Gainesville, FL | Star Martial Arts";
+const description = "Gainesville’s Best After School Program: pickup from 15 area schools, active supervision, enrichment, and martial arts twice a week. Pickup until 6:15 PM.";
+const schema = [{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What ages can participate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our After School Program serves school-aged children. Specific school and grade eligibility can be confirmed with our team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does StarMA pick up from my child’s school?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer transportation from designated Gainesville-area schools. Check the school lists above to see which location serves your child’s school."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is martial arts included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Students receive two martial arts classes per week as part of the After School Program."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What time is pickup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Families can pick up their children as late as 6:15 PM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are snacks included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Daily snack is included with Gold membership. Optional snack accounts are available for other eligible students."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens on Teacher Workdays?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Teacher Workday Camps are included for enrolled After School families. Contact our team for details about specific dates and schedules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I tour before enrolling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! We encourage families to schedule a tour, meet our team, and learn more about the program."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does the program cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing depends on location. Please contact the appropriate location for more information: West Gainesville, 352-505-1499 or North Gainesville, 352-672-6356."
+      }
+    }
+  ]
+}];
+---
+<BaseLayout title={title} description={description} image="/images/as1.webp" schema={schema} pageClass="pg-after">
+<section class="w kh"><div class="rv"><p class="bc"><a href="/">Home</a> / Programs / After School Program</p><p class="lab eb">Gainesville’s Best After School Program</p><h1 class="d" style="font-size:clamp(48px,7vw,88px);margin:16px 0 20px">Their school day ends. Their growth doesn’t.</h1><p style="font-size:19px;color:var(--m);max-width:560px">After the final school bell, a whole new world of opportunities begins. At Star Martial Arts, afternoons are filled with friendships, exciting activities, martial arts, and meaningful life lessons that help your child grow on and off the mat.</p><div class="btns" style="margin-top:28px"><a class="btn p" href="#as-tour">Schedule a Tour</a><a class="btn o" href="#as-pickup">Find Your School</a></div><div class="chips"><span>School Pickup Available</span><span>Martial Arts Included Twice Weekly</span><span>Pickup as Late as 6:15 PM</span></div></div>
+<div class="im rv has-bgi" style="height:auto;aspect-ratio:1/1;width:100%;max-width:600px;margin:0 auto;border-radius:12px;"><img class="bgi" src="/images/ash.webp" alt="Smiling children wearing paper-plate lion masks they made" width="1100" height="1100" fetchpriority="high" decoding="async" style="object-position:center 50%"></div></section>
+
+<section class="sec dk"><div class="w sty"><div class="ps rv"><div class="im has-bgi" style="position:relative;height:340px;border-radius:12px"><img class="bgi" src="/images/mt1.webp" alt="Matthias as a young StarMA student, holding up a green star patch" width="750" height="1000" loading="lazy" decoding="async" style="object-position:center 25%"><span class="tn">THEN</span></div><div class="im has-bgi" style="position:relative;height:340px;border-radius:12px"><img class="bgi" src="/images/mt2.webp" alt="Matthias today, smiling at a martial arts tournament with a medal and award sign" width="750" height="1000" loading="lazy" decoding="async" style="object-position:center 30%"><span class="tn">NOW</span></div></div>
+<div class="tx rv"><p class="lab eb" style="color:#fff;margin-bottom:14px">Real students. Real stories.</p><h2 class="hdg" style="margin-bottom:12px">Every child deserves someone who believes in them.</h2><h3 class="d" style="font-size:28px;color:#BBB;margin-bottom:24px">From kindergarten to coach: Matthias’s story</h3>
+<p>Matthias joined the Star Martial Arts After School Program when he was in kindergarten.</p>
+<p>At the time, making friends didn’t always come easily. He often found himself feeling like the odd one out, struggling to find his place among his peers. As the youngest of several siblings, he was also accustomed to competing for attention at home.</p>
+<p>But over time, something began to change. Through years of encouragement, friendships, mentorship, and opportunities to grow, Matthias slowly developed his confidence. The child who once struggled to connect with others began finding his voice.</p>
+<p>His confidence continued to grow, his academic performance improved, and he gradually became an outgoing young man who could light up a conversation. Matthias remained part of the StarMA family throughout elementary school, middle school, and high school.</p>
+<p>Along the way, martial arts became an important part of his life. He developed into a highly accomplished competitor, competing at the state, national, and international levels.</p>
+<p>But his most meaningful achievement may be what happened next.</p>
+<p style="color:#fff;font:800 34px/1 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase">Matthias became a StarMA instructor.</p>
+<p>Today, the same child who once struggled to find his place is helping the next generation of students build confidence, develop friendships, and discover their own potential.</p>
+<blockquote class="pq"><p>Every child deserves someone who believes in them.</p><small>Our philosophy at Star Martial Arts</small></blockquote>
+<p>His journey represents what we believe at Star Martial Arts: every child deserves a chance, a place to belong, and someone who believes in them.</p>
+</div></div></section>
+
+<section class="sec df" id="as-compare"><div class="w"><p class="lab eb rv">More than just after school</p><h2 class="hdg rv" style="margin:14px 0 14px">Not all afternoons are created equal.</h2><p class="sub rv">Where your child spends their afternoons matters. Those hours can be an opportunity to build confidence, discover new interests, develop friendships, and practice skills that last a lifetime.</p>
+<div class="cmp" id="cmp"><div class="cmp-a"><h3>A typical after-school arrangement</h3><ul><li><b>Daily experience</b>May emphasize supervision and free time</li><li><b>Physical activity</b>Opportunities vary by program</li><li><b>Character development</b>May be informal or occasional</li><li><b>Transportation</b>School pickup may require separate arrangements</li><li><b>Teacher workdays</b>Families may need to arrange additional care</li><li><b>Supervision</b>Practices vary by provider</li><li><b>Convenience</b>Families may coordinate multiple activities</li><li><b>Community</b>Social opportunities vary</li></ul></div><div class="cmp-b"><h3>The StarMA experience</h3><ul><li><b>Daily experience</b>Structured enrichment, activities, and positive experiences</li><li><b>Physical activity</b>Martial arts instruction twice per week, plus other active experiences</li><li><b>Character development</b>Intentional life skills education and reinforcement</li><li><b>Transportation</b>Pickup from designated Gainesville schools</li><li><b>Teacher workdays</b>Teacher Workday Camps included for enrolled ASP families</li><li><b>Supervision</b>Active Supervision is a core StarMA operating standard</li><li><b>Convenience</b>Martial arts and after-school care in one program</li><li><b>Community</b>A culture centered on We Over Me, friendships, and belonging</li></ul></div></div><p class="dn">Other programs vary. This comparison illustrates common arrangements and does not make universal claims.</p>
+<p class="cls rv">We’re not just filling the hours between school and home. We’re making those hours count.</p><a class="btn p" href="#as-tour">Schedule a Tour</a></div></section>
+
+<section class="sec" id="as-day"><div class="w"><p class="lab eb rv">A day in the life at StarMA</p><h2 class="hdg rv" style="margin:14px 0 14px">Every afternoon has a purpose.</h2><p class="sub rv">From the moment school lets out until it’s time to head home, we want every child to have opportunities to learn, move, connect, and grow.</p>
+<ol class="tl" id="tl"><li><span class="n" aria-hidden="true">1</span><div class="c"><div><h4>The adventure begins</h4><h3>School Pickup</h3><p>Our transportation team picks students up from designated Gainesville-area schools and brings them to their StarMA location. Transportation procedures include established routes, assigned seats, and team communication.</p><p class="wl">Why it matters</p><ul class="w2"><li>Convenience for working parents</li><li>Organized transportation routines</li><li>A smooth transition from school</li></ul></div><div class="im has-bgi" style="min-height:200px"><img class="bgi" src="/images/as13.webp" alt="A StarMA team member waving beside the pickup van with a clipboard" width="800" height="442" loading="lazy" decoding="async"></div></div></li><li><span class="n" aria-hidden="true">2</span><div class="c"><div><h4>Reset and recharge</h4><h3>Arrival and Snack</h3><p>Students transition into their afternoon activities and have opportunities to recharge. Snack accounts are available, while daily snack is included with Gold membership.</p><p class="wl">Why it matters</p><ul class="w2"><li>Transitioning from school</li><li>Building positive routines</li><li>Preparing for the afternoon</li></ul></div><div class="im has-bgi" style="min-height:200px"><img class="bgi" src="/images/as2.webp" alt="Children enjoying cupcakes they decorated" width="640" height="853" loading="lazy" decoding="async"></div></div></li><li><span class="n" aria-hidden="true">3</span><div class="c"><div><h4>Fun with a purpose</h4><h3>Activities and Enrichment</h3><p>Students take part in engaging activities, games, creative projects, and time with friends. Examples include arts and crafts, team games, themed activities, creative projects, and cooperative challenges.</p><p class="wl">Why it matters</p><ul class="w2"><li>Creativity</li><li>Friendships</li><li>Cooperation</li><li>Communication</li><li>Problem solving</li><li>Positive experiences</li></ul></div><div class="im has-bgi" style="min-height:200px"><img class="bgi" src="/images/as3.webp" alt="Students holding up paper-bag puppets they made" width="720" height="540" loading="lazy" decoding="async"></div></div></li><li><span class="n" aria-hidden="true">4</span><div class="c"><div><h4>Confidence in action</h4><h3>Martial Arts</h3><p>Our After School Program includes two martial arts classes per week. Students practice techniques while developing focus, discipline, confidence, and respect.</p><p class="wl">Why it matters</p><ul class="w2"><li>Physical coordination</li><li>Confidence and self-esteem</li><li>Listening and focus</li><li>Goal setting</li><li>Perseverance</li><li>Positive mentorship</li></ul></div><div class="im has-bgi" style="min-height:200px"><img class="bgi" src="/images/g1.webp" alt="Martial arts class" width="1100" height="733" loading="lazy" decoding="async"></div></div></li><li><span class="n" aria-hidden="true">5</span><div class="c"><div><h4>Lessons that go beyond the mat</h4><h3>Life Skills</h3><p>Our life skills curriculum includes initiative, empathy, resilience, responsibility, cooperation, respect, flexibility, honesty, and self-esteem. These skills are reinforced through martial arts, group activities, conversations, and everyday interactions.</p><p class="wl">Why it matters</p><ul class="w2"><li>Initiative</li><li>Empathy</li><li>Resilience</li><li>Responsibility</li><li>Cooperation</li><li>Respect</li><li>Flexibility</li><li>Honesty</li><li>Self-esteem</li></ul></div><div class="im has-bgi" style="min-height:200px"><img class="bgi" src="/images/as4.webp" alt="An instructor talking with students seated on the mat" width="720" height="540" loading="lazy" decoding="async"></div></div></li><li><span class="n" aria-hidden="true">6</span><div class="c"><div><h4>Ending the day on a high note</h4><h3>Parent Pickup</h3><p>Parents can pick up their children as late as 6:15 PM, so your child has a positive, engaging place to spend the afternoon and your day stays flexible.</p><p class="wl">Why it matters</p><ul class="w2"><li>Convenience</li><li>Flexibility for working families</li></ul></div><div class="ph">Photo: parent pickup</div></div></li></ol><p class="dn">A conceptual look at a typical afternoon. Not every activity happens every day.</p></div></section>
+
+<section class="sec dk"><div class="w"><p class="lab eb rv">The StarMA difference</p><h2 class="hdg rv" style="margin:14px 0 32px">We don’t just watch kids. We help them grow.</h2><div class="pl g4">
+<div class="pi rv"><h3>Active Supervision</h3><p>Our team is expected to be actively engaged with students, not just observing from the sidelines. Never just stand there. We emphasize attentiveness, interaction, safety, and positive engagement.</p></div>
+<div class="pi rv"><h3>Life Skills for Life</h3><p>We intentionally teach and reinforce confidence, responsibility, respect, resilience, and cooperation, lessons designed to extend beyond martial arts class.</p></div>
+<div class="pi rv"><h3>We Over Me</h3><p>Our culture encourages students to think beyond themselves, with teamwork, cooperation, helping others, and a supportive community.</p></div>
+<div class="pi rv"><h3>Memorable Experiences</h3><p>We want children to look forward to their afternoons, from martial arts and creative projects to themed activities and friendships.</p></div></div>
+<a class="btn ow" style="margin-top:32px" href="/about-us/">About Star Martial Arts</a></div></section>
+
+<section class="sec df" id="as-pickup"><div class="w"><p class="lab eb rv">Find your school</p><h2 class="hdg rv" style="margin:14px 0 14px">We pick up. They level up.</h2><p class="sub rv">Wondering if StarMA picks up from your child’s school? Find your school in the lists below to see which of our Gainesville locations serves your family.</p>
+<div class="lc2" id="locs"><div class="pi"><h3>West Gainesville</h3><p>500 NW 60th St, Suite A<br>Gainesville, FL 32607<br><a href="tel:3525051499">352-505-1499</a><br><a href="mailto:westgv@mystarma.com">westgv@mystarma.com</a></p><p class="wl">Schools served</p><ul class="sl">{schoolsFor('west').map((s) => <li>{s}</li>)}</ul><a class="btn p" target="_blank" rel="noopener" href="https://cp.mystudio.io/t/?=3523744950/243/51538//1793649891">Schedule a Tour at West</a></div><div class="pi"><h3>North Gainesville</h3><p>5000 NW 34th Blvd, Suite 5<br>Gainesville, FL 32605<br><a href="tel:3526726356">352-672-6356</a><br><a href="mailto:northgv@mystarma.com">northgv@mystarma.com</a></p><p class="wl">Schools served</p><ul class="sl">{schoolsFor('north').map((s) => <li>{s}</li>)}</ul><a class="btn p" target="_blank" rel="noopener" href="https://cp.mystudio.io/t/?=3526726356/17214/66074//1793652106">Schedule a Tour at North</a></div></div><p class="rv" style="margin-top:24px;max-width:640px"><b>Don’t see your school?</b> <a href="tel:3525051499" style="font-weight:600">Contact our team</a> to ask about transportation options. We can’t promise pickup from schools that aren’t listed.</p></div></section>
+
+<section class="sec"><div class="w kb"><div class="rv"><p class="lab eb">Martial arts is included</p><h2 class="hdg" style="margin:14px 0 16px">Not just an after-school program. A head start on confidence.</h2><p style="font-size:18px;color:var(--m)">Enrolled After School students receive two martial arts classes per week. Your child doesn’t need another stop on your afternoon schedule to experience the benefits of martial arts. It’s already part of their StarMA experience.</p><div class="chips"><span>Confidence</span><span>Discipline</span><span>Respect</span><span>Physical coordination</span><span>Focus</span><span>Perseverance</span><span>Goal setting</span><span>Positive instructor relationships</span></div><p style="margin-top:22px"><a href="/kids-martial-arts/" style="font-weight:600">Learn about our Kids Martial Arts curriculum →</a></p></div>
+<div class="im rv has-bgi"><img class="bgi" src="/images/kids.webp" alt="Two young students practicing a kick and a board-holding drill in class" width="760" height="507" loading="lazy" decoding="async" style="object-position:center 40%"></div></div></section>
+
+<section class="sec df"><div class="w"><p class="lab eb rv">Convenience for busy families</p><h2 class="hdg rv" style="margin:14px 0 32px">We make afternoons easier.</h2><div class="pl g3">
+<div class="pi rv"><h3>School Pickup</h3><p>Transportation from designated schools to the appropriate StarMA location.</p></div>
+<div class="pi rv"><h3>Pickup Until 6:15 PM</h3><p>Flexible afternoon pickup to help accommodate working families.</p></div>
+<div class="pi rv"><h3>Teacher Workday Camps</h3><p>Teacher Workday Camps are included for enrolled After School families. This applies to eligible Teacher Workday Camps, not necessarily all school holidays or vacation camps.</p></div></div>
+<p class="sub rv" style="margin-top:28px">Less time coordinating activities. More opportunities for your child to grow.</p></div></section>
+
+<section class="sec dk"><div class="w"><p class="lab eb rv">Real experiences. Real growth.</p><h2 class="hdg rv" style="margin:14px 0 0">Life at Star after school</h2><div class="ga" id="ga"><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/g1.webp" alt="Martial arts classes" width="1100" height="733" loading="lazy" decoding="async"><figcaption class="cap">Martial arts classes</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/g3.webp" alt="Instructor interactions" width="700" height="467" loading="lazy" decoding="async"><figcaption class="cap">Instructor interactions</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/g2.webp" alt="Student achievements" width="560" height="840" loading="lazy" decoding="async"><figcaption class="cap">Student achievements</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/as5.webp" alt="Arts and crafts" width="640" height="853" loading="lazy" decoding="async"><figcaption class="cap">Arts and crafts</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/as6.webp" alt="Cooperative games" width="720" height="540" loading="lazy" decoding="async"><figcaption class="cap">Cooperative games</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/as7.webp" alt="Friendships" width="640" height="480" loading="lazy" decoding="async"><figcaption class="cap">Friendships</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/as8.webp" alt="Themed activities" width="720" height="540" loading="lazy" decoding="async"><figcaption class="cap">Themed activities</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/as9.webp" alt="Creative building" width="640" height="480" loading="lazy" decoding="async"><figcaption class="cap">Creative building</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/as10.webp" alt="Our North Gainesville crew" width="640" height="853" loading="lazy" decoding="async"><figcaption class="cap">Our North Gainesville crew</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/as16.webp" alt="Creative challenges" width="640" height="853" loading="lazy" decoding="async"><figcaption class="cap">Creative challenges</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/as12.webp" alt="Learning together on the mat" width="720" height="540" loading="lazy" decoding="async"><figcaption class="cap">Learning together on the mat</figcaption></figure><figure class="im has-bgi" style="height:220px"><img class="bgi" src="/images/as14.webp" alt="Teacher Workday Camps" width="720" height="538" loading="lazy" decoding="async"><figcaption class="cap">Teacher Workday Camps</figcaption></figure></div><p class="dn" style="color:#999"></p></div></section>
+
+<section class="sec"><div class="w" style="max-width:820px"><p class="lab eb rv">Questions parents ask</p><h2 class="hdg rv" style="margin:14px 0 24px">Good to know</h2><div id="faq"><details><summary>What ages can participate?</summary><p>Our After School Program serves school-aged children. Specific school and grade eligibility can be confirmed with our team.</p></details><details><summary>Does StarMA pick up from my child’s school?</summary><p>We offer transportation from designated Gainesville-area schools. Check the school lists above to see which location serves your child’s school.</p></details><details><summary>Is martial arts included?</summary><p>Yes! Students receive two martial arts classes per week as part of the After School Program.</p></details><details><summary>What time is pickup?</summary><p>Families can pick up their children as late as 6:15 PM.</p></details><details><summary>Are snacks included?</summary><p>Daily snack is included with Gold membership. Optional snack accounts are available for other eligible students.</p></details><details><summary>What happens on Teacher Workdays?</summary><p>Teacher Workday Camps are included for enrolled After School families. Contact our team for details about specific dates and schedules.</p></details><details><summary>Can I tour before enrolling?</summary><p>Absolutely! We encourage families to schedule a tour, meet our team, and learn more about the program.</p></details><details><summary>How much does the program cost?</summary><p>Pricing depends on location. Please contact the appropriate location for more information: <a href="tel:3525051499">West Gainesville, 352-505-1499</a> or <a href="tel:3526726356">North Gainesville, 352-672-6356</a>.</p></details></div></div></section>
+
+<LeadForm page="after" />
+<section class="sec dk" id="as-tour"><div class="w" style="text-align:center"><h2 class="hdg" style="max-width:15ch;margin:0 auto 16px">Give them an afternoon worth looking forward to.</h2><p style="color:#E4E4E4;max-width:560px;margin:0 auto 24px;font-size:18px">Discover a place where your child can build friendships, develop confidence, learn valuable life skills, and make memories that last.</p>
+<div id="tourlinks" style="max-width:760px;margin:0 auto 28px"><h3 class="d" style="font-size:36px;color:#fff;margin-bottom:8px">Book your tour online</h3><p style="color:#E4E4E4;margin-bottom:18px">Pick your location and choose a time that works for you.</p><div class="tl2b"><a class="btn p" target="_blank" rel="noopener" href="https://cp.mystudio.io/t/?=3523744950/243/51538//1793649891">Book a Tour at West Gainesville</a><a class="btn p" target="_blank" rel="noopener" href="https://cp.mystudio.io/t/?=3526726356/17214/66074//1793652106">Book a Tour at North Gainesville</a></div><p style="color:#bbb;margin:22px 0 4px;font-size:14px">Prefer we reach out first? Send a request below.</p></div>
+<form class="fm" id="tf" novalidate=""><h3 class="d" style="font-size:36px;margin-bottom:10px">Or send us a tour request</h3><p class="nb" role="note">Integration required: this form validates your answers but is not connected to a form service yet, so nothing is submitted from this prototype.</p>
+<label for="f-name">Parent or guardian name</label><input id="f-name" name="name" autocomplete="name" required=""><p class="er" id="e-name" role="alert"></p>
+<label for="f-email">Email address (optional)</label><input id="f-email" name="email" type="email" autocomplete="email"><p class="er" id="e-email" role="alert"></p>
+<label for="f-phone">Phone number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required=""><p class="er" id="e-phone" role="alert"></p>
+<label for="f-school">Student’s school</label><input id="f-school" name="school" list="schl" autocomplete="off" required="" placeholder="Start typing, or enter your school"><datalist id="schl">{SCHOOLS.map((s) => <option value={s[0]}></option>)}</datalist><p class="er" id="e-school" role="alert"></p><p class="nt" id="f-hint"></p>
+<label for="f-grade">Student’s grade</label><select id="f-grade" name="grade" required=""><option value="">Select a grade</option><option>Kindergarten</option><option>1st</option><option>2nd</option><option>3rd</option><option>4th</option><option>5th</option><option>6th</option><option>7th</option><option>8th</option><option>Other</option></select><p class="er" id="e-grade" role="alert"></p>
+<fieldset><legend>Preferred StarMA location</legend><div class="rd"><label><input type="radio" name="loc" value="west"> West Gainesville</label><label><input type="radio" name="loc" value="north"> North Gainesville</label></div><p class="er" id="e-loc" role="alert"></p></fieldset>
+<label for="f-when">Preferred tour date or availability</label><input id="f-when" name="when" placeholder="For example, weekday afternoons">
+<label for="f-q">Additional questions (optional)</label><textarea id="f-q" name="q" rows="3"></textarea>
+<SmsConsent name="sms" />
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn p" type="submit">Schedule Your Tour</button><p class="nt" style="margin-top:12px">We use your information only to respond to your inquiry. <a href="tel:3525051499">Prefer to ask first? Call West</a> or <a href="tel:3526726356">North</a>.</p><div id="fs" role="status" aria-live="polite"></div></form></div></section>
+<div class="stk"><a class="btn p" href="#as-tour">Schedule a Tour</a></div>
+<script>
+  import '../scripts/after-school.ts';
+</script>
+</BaseLayout>

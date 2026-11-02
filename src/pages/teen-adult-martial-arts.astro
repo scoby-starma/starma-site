@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+const title = "Kickboxing & Martial Arts for Teens and Adults in Gainesville | Star Martial Arts";
+const description = "Kickboxing-based martial arts for ages 13 and up in West and North Gainesville. Get fit, learn self-defense, relieve stress, and join a real community.";
+const schema = [{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to be in shape to start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Start where you are. Classes are built to meet beginners and keep you progressing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need martial arts experience?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not at all. Instructors guide you step by step from your first class."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ages can join?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Teen and adult classes start at age 13 and up, separate from our kids’ classes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the trial include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All trials include a Star Martial Arts T-Shirt! Your first uniform will be provided at no cost upon enrollment! Trial specials vary throughout the year, so contact your preferred location for accurate information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which location should I choose, and when are classes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pick whichever is closest to home or work. Get Started helps you choose. Class times vary by location, but each location has multiple class time options each day, Monday through Friday. Contact your preferred location for the current schedule."
+      }
+    }
+  ]
+}];
+---
+<BaseLayout title={title} description={description} image="/images/ta2.webp" schema={schema} pageClass="pg-adult">
+<section class="ah"><div class="w kh"><div class="rv"><p class="bc"><a href="/">Home</a> / Programs / Teen &amp; Adult Martial Arts</p><p class="lab eb">Ages 13 and up · West &amp; North Gainesville</p><h1 class="d" style="font-size:clamp(48px,7vw,88px);margin:16px 0 20px">Train hard. Feel stronger. Leave the stress behind.</h1><p class="lead" style="font-size:19px;max-width:540px">Teen &amp; Adult Martial Arts at Star is kickboxing-based training in its own classes, built for ages 13 and up. Build real skills, real fitness, and a community that shows up for you.</p><div class="btns" style="margin-top:28px"><button class="btn p" data-gs data-p="adult">Start Your Trial</button><a class="btn ow" href="#a-class">See What a Class Looks Like</a></div><div class="chips"><span>Ages 13 and up</span><span>Beginners welcome</span><span>Separate from kids’ classes</span></div></div>
+<div class="im rv has-bgi"><img class="bgi" src="/images/ta2.webp" alt="Two students training pad work in a Star Martial Arts class" width="600" height="800" fetchpriority="high" decoding="async" style="object-position:center 30%"></div></div></section>
+
+<section class="sec df"><div class="w"><p class="lab eb rv">What you get</p><h2 class="hdg rv" style="margin:14px 0 36px">Results you can feel</h2><div class="pl g3">
+<div class="pi rv"><h3>Real Community</h3><p>Train alongside people who push you, cheer for you, and notice when you show up.</p></div>
+<div class="pi rv"><h3>Higher Fitness</h3><p>Build strength, endurance, and coordination with workouts that never feel like a treadmill.</p></div>
+<div class="pi rv"><h3>Weight Loss Goals</h3><p>Burn serious energy every class and work toward your weight and fitness goals with training you’ll look forward to.</p></div>
+<div class="pi rv"><h3>Self-Defense</h3><p>Learn practical skills and the confidence that comes from knowing you can handle yourself.</p></div>
+<div class="pi rv"><h3>Stress Relief</h3><p>Leave the workday or school day at the door. Focused training clears your head.</p></div>
+<div class="pi rv"><h3>Earned Confidence</h3><p>Nothing is given here. Every skill and every belt is earned, so the confidence is real.</p></div></div></div></section>
+
+<section class="sec" id="a-class"><div class="w"><p class="lab eb rv">What class looks like</p><h2 class="hdg rv" style="margin:14px 0 0">Every class has a rhythm</h2>
+<div class="stp s5"><div class="pi rv"><h3>1 · Bow in and warm up</h3><p>Greet your instructors and get your body moving.</p></div><div class="pi rv"><h3>2 · Kickboxing combinations</h3><p>Work striking combinations that build power, speed, and practical self-defense.</p></div><div class="pi rv"><h3>3 · Daily focus</h3><p>Technique, fitness training, board breaks, and more. Each focus builds a skill you can apply, not just memorize.</p></div><div class="pi rv"><h3>4 · Mat Chat</h3><p>A short talk on the values that matter and how they show up at work, school, and home.</p></div><div class="pi rv"><h3>5 · Celebrate progress</h3><p>Finish by recognizing wins in class and beyond.</p></div></div></div></section>
+
+<section class="sec dk"><div class="w kb"><div class="rv"><p class="lab eb">Your own class</p><h2 class="hdg" style="margin:14px 0 16px">Train with people at your stage</h2><p style="font-size:18px;color:#E4E4E4">Teen and adult classes run separately from our kids’ classes, so you train with people closer to your own age and goals. No experience needed. Start where you are.</p><ul><li>Beginners welcome, from day one</li><li>Clear, step-by-step coaching</li><li>A supportive community that earns it together</li><li>A clean, professional facility</li></ul></div>
+<div class="im rv has-bgi" style="height:420px;border-radius:12px;"><img class="bgi" src="/images/ta6.webp" alt="Two students training pad work with an instructor nearby" width="720" height="540" loading="lazy" decoding="async" style="object-position:center 40%"></div></div></section>
+
+<section class="sec"><div class="w"><p class="lab eb rv">Real classes. Real people.</p><h2 class="hdg rv" style="margin:14px 0 0">Life in teen &amp; adult classes</h2><div class="tga"><figure class="im rv has-bgi"><img class="bgi" src="/images/adult.webp" alt="Partner training" width="760" height="570" loading="lazy" decoding="async" style="object-position:center 35%"><figcaption class="cap">Partner training</figcaption></figure><figure class="im rv has-bgi"><img class="bgi" src="/images/ta11.webp" alt="Heavy bag training" width="600" height="800" loading="lazy" decoding="async" style="object-position:center 30%"><figcaption class="cap">Heavy bag training</figcaption></figure><figure class="im rv has-bgi"><img class="bgi" src="/images/ta7.webp" alt="Partner drills" width="600" height="800" loading="lazy" decoding="async" style="object-position:center 35%"><figcaption class="cap">Partner drills</figcaption></figure><figure class="im rv has-bgi"><img class="bgi" src="/images/ta10.webp" alt="Friends on the mat" width="720" height="540" loading="lazy" decoding="async" style="object-position:center 30%"><figcaption class="cap">Friends on the mat</figcaption></figure><figure class="im rv has-bgi"><img class="bgi" src="/images/ta3.webp" alt="Instructor demonstrations" width="600" height="800" loading="lazy" decoding="async" style="object-position:center 25%"><figcaption class="cap">Instructor demonstrations</figcaption></figure><figure class="im rv has-bgi"><img class="bgi" src="/images/ta9.webp" alt="Coaches and students" width="720" height="540" loading="lazy" decoding="async" style="object-position:center 35%"><figcaption class="cap">Coaches and students</figcaption></figure><figure class="im rv has-bgi"><img class="bgi" src="/images/ta8.webp" alt="Training partners" width="720" height="540" loading="lazy" decoding="async" style="object-position:center 35%"><figcaption class="cap">Training partners</figcaption></figure><figure class="im rv has-bgi"><img class="bgi" src="/images/ta1.webp" alt="Star pride" width="720" height="540" loading="lazy" decoding="async" style="object-position:center 20%"><figcaption class="cap">Star pride</figcaption></figure></div></div></section>
+
+<section class="sec df"><div class="w"><p class="lab eb rv">What we stand for</p><h2 class="hdg rv" style="margin:14px 0 0">The Star standard</h2>
+<div class="stp"><div class="pi rv"><h3>Pressure Makes Diamonds</h3><p>Handle the pressure, live a better life.</p></div><div class="pi rv"><h3>1% Growth</h3><p>Find the 1% every class, every day.</p></div><div class="pi rv"><h3>Quality over Quantity</h3><p>Details make or break progress.</p></div></div></div></section>
+
+<section class="sec"><div class="w" style="max-width:820px"><p class="lab eb rv">Questions we hear</p><h2 class="hdg rv" style="margin:14px 0 24px">Good to know</h2>
+<details><summary>Do I need to be in shape to start?</summary><p>No. Start where you are. Classes are built to meet beginners and keep you progressing.</p></details>
+<details><summary>Do I need martial arts experience?</summary><p>Not at all. Instructors guide you step by step from your first class.</p></details>
+<details><summary>What ages can join?</summary><p>Teen and adult classes start at age 13 and up, separate from our kids’ classes.</p></details>
+<details><summary>What does the trial include?</summary><p>All trials include a Star Martial Arts T-Shirt! Your first uniform will be provided at no cost upon enrollment! Trial specials vary throughout the year, so contact your preferred location for accurate information.</p></details>
+<details><summary>Which location should I choose, and when are classes?</summary><p>Pick whichever is closest to home or work. Get Started helps you choose. Class times vary by location, but each location has multiple class time options each day, Monday through Friday. Contact your preferred location for the current schedule.</p></details></div></section>
+
+<LeadForm page="adult" />
+<section class="sec fin"><div class="w rv"><h2>The first class is the hardest part</h2><p>Show up, and we’ll take it from there.</p><div class="btns"><button class="btn p" data-gs data-p="adult">Start Your Trial</button><a class="btn ow" href="tel:3525051499">Call West</a><a class="btn ow" href="tel:3526726356">Call North</a></div></div></section>
+</BaseLayout>

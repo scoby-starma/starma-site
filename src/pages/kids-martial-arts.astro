@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+const title = "Kids Martial Arts Classes in Gainesville, FL (Ages 6-12) | Star Martial Arts";
+const description = "Kids martial arts for ages 6–12 at two Gainesville locations. Build confidence, focus, and life skills in structured, high-energy classes. Start your trial.";
+const schema = [{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does my child need experience?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not at all. Classes welcome beginners, and instructors guide each child step by step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ages is this for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kids Martial Arts is designed for ages 6–12. Teens and adults train in their own separate classes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the trial include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All trials include a Star Martial Arts T-Shirt! Your first uniform will be provided at no cost upon enrollment! Trial specials vary throughout the year, so contact your preferred location for accurate information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which location should we choose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pick whichever is closest to home or school. Get Started helps you choose."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When are classes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Class times vary by location, but each location has multiple class time options each day, Monday through Friday. Contact your preferred location for the current schedule."
+      }
+    }
+  ]
+}];
+---
+<BaseLayout title={title} description={description} image="/images/kids.webp" schema={schema} pageClass="pg-kids">
+<section class="w kh"><div class="rv"><p class="bc"><a href="/">Home</a> / Programs / Kids Martial Arts</p><p class="lab eb">Ages 6–12 · West &amp; North Gainesville</p><h1 class="d" style="font-size:clamp(48px,7vw,88px);margin:16px 0 20px">Confidence they can feel. Skills they keep.</h1><p style="font-size:19px;color:var(--m);max-width:540px">At Star, confidence is earned, not handed out. Kids ages 6–12 build it one honest effort at a time, with instructors and teammates cheering them on.</p><div class="btns" style="margin-top:28px"><button class="btn p" data-gs data-p="kids">Start Your Trial</button><a class="btn o" href="#k-class">See How Class Works</a></div><div class="chips"><span>Ages 6–12</span><span>Beginners welcome</span><span>Two Gainesville locations</span></div></div>
+<div class="im rv has-bgi"><img class="bgi" src="/images/kids.webp" alt="Two young students practicing a kick and a board-holding drill in class" width="760" height="507" fetchpriority="high" decoding="async" style="object-position:center 40%"></div></section>
+
+<section class="sec df"><div class="w"><p class="lab eb rv">What your child gains</p><h2 class="hdg rv" style="margin:14px 0 36px">Built on earned confidence</h2><div class="pl g4">
+<div class="pi rv"><h3>Earned Confidence</h3><p>Skills and belts are earned through effort, so the confidence kids feel is real, and it lasts.</p></div>
+<div class="pi rv"><h3>1% Growth</h3><p>We look for one small win in every class. Small steps add up to big changes over time.</p></div>
+<div class="pi rv"><h3>Pressure Makes Diamonds</h3><p>Kids learn to stay calm and keep trying when something is hard, a skill for school, sports, and life.</p></div>
+<div class="pi rv"><h3>Strong Bodies</h3><p>Kickboxing-style combinations build fitness, balance, and coordination, and teach personal safety skills kids can use for life.</p></div></div></div></section>
+
+<section class="sec" id="k-class"><div class="w"><p class="lab eb rv">What class feels like</p><h2 class="hdg rv" style="margin:14px 0 0">Every class has a rhythm</h2>
+<div class="stp s5"><div class="pi rv"><h3>1 · Bow in and warm up</h3><p>Students greet their instructors and get their bodies moving, ready to focus.</p></div><div class="pi rv"><h3>2 · Personal safety combinations</h3><p>Kickboxing-style combinations build coordination and confidence while teaching practical personal safety.</p></div><div class="pi rv"><h3>3 · Daily focus</h3><p>Each class has a daily focus, such as a technique, fitness training, or board breaks. Every focus builds a skill and practices applying it, not just memorizing it.</p></div><div class="pi rv"><h3>4 · Life skills and character</h3><p>Every class includes a Mat Chat on the cycle’s life skill, and how it works in class, at home, and at school. Parents join the conversation too, so families stay engaged in their student’s progress.</p></div><div class="pi rv"><h3>5 · Celebrate progress</h3><p>We close by celebrating wins in class, at school, and at home, because effort matters everywhere.</p></div></div></div></section>
+
+<section class="sec df"><div class="w"><p class="lab eb rv">The habits we build</p><h2 class="hdg rv" style="margin:14px 0 0">Small habits, big futures</h2>
+<div class="stp"><div class="pi rv"><h3>Show up early, ready to go</h3><p>At Star, early is on time. Kids learn that being prepared is a way of showing respect.</p></div><div class="pi rv"><h3>Look the part</h3><p>Wearing the uniform with pride helps kids see themselves as the student they are becoming.</p></div><div class="pi rv"><h3>Say it clearly</h3><p>Communication is critical. Kids practice speaking up, asking questions, and listening well.</p></div></div></div></section>
+
+<section class="sec dk"><div class="w kb"><div class="rv"><p class="lab eb">New to martial arts?</p><h2 class="hdg" style="margin:14px 0 16px">Brand-new is perfect</h2><p style="font-size:18px;color:#E4E4E4">No experience needed. Our instructors meet every child where they are, and nobody is expected to be ready on day one. We ask for effort, and we help with the rest.</p><ul><li>Welcoming, supportive classmates</li><li>Clear, step-by-step instruction</li><li>Active supervision from the first bow to the last</li><li>Professional, accountable instructors who take care of every member</li></ul></div>
+<div class="im rv has-bgi"><img class="bgi" src="/images/g3.webp" alt="An instructor talking with a circle of seated students" width="700" height="467" loading="lazy" decoding="async"></div></div></section>
+
+<section class="sec"><div class="w" style="max-width:820px"><p class="lab eb rv">Questions parents ask</p><h2 class="hdg rv" style="margin:14px 0 24px">Good to know</h2>
+<details><summary>Does my child need experience?</summary><p>Not at all. Classes welcome beginners, and instructors guide each child step by step.</p></details>
+<details><summary>What ages is this for?</summary><p>Kids Martial Arts is designed for ages 6–12. Teens and adults train in their own separate classes.</p></details>
+<details><summary>What does the trial include?</summary><p>All trials include a Star Martial Arts T-Shirt! Your first uniform will be provided at no cost upon enrollment! Trial specials vary throughout the year, so contact your preferred location for accurate information.</p></details>
+<details><summary>Which location should we choose?</summary><p>Pick whichever is closest to home or school. Get Started helps you choose.</p></details>
+<details><summary>When are classes?</summary><p>Class times vary by location, but each location has multiple class time options each day, Monday through Friday. Contact your preferred location for the current schedule.</p></details></div></section>
+
+<LeadForm page="kids" />
+<section class="sec fin"><div class="w rv"><h2>Give your child a place to grow</h2><p>Try a class and see how quickly kids light up.</p><div class="btns"><button class="btn p" data-gs data-p="kids">Start Your Trial</button><a class="btn ow" href="tel:3525051499">Call West</a><a class="btn ow" href="tel:3526726356">Call North</a></div></div></section>
+</BaseLayout>

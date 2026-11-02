@@ -1,0 +1,9 @@
+---
+import { LOCATIONS, SITE } from '../config/site';
+const tel = (p: string) => 'tel:' + p.replace(/-/g, '');
+const { west, north } = LOCATIONS;
+---
+<footer><div class="w"><div><span class="lg" role="img" aria-label="Star Martial Arts" style="width:160px;height:70px;margin-bottom:14px"></span><b>{SITE.name}</b><br>Family-focused martial arts in Gainesville, Florida, since {SITE.founded}.</div>
+<div><b><a href={west.path}>{west.n}</a></b><br>{west.a}<br><a href={tel(west.p)}>{west.p}</a></div>
+<div><b><a href={north.path}>{north.n}</a></b><br>{north.a}<br><a href={tel(north.p)}>{north.p}</a></div></div>
+<div class="w fl"><a href="/privacy-policy/">Privacy Policy &amp; SMS Terms</a></div></footer>

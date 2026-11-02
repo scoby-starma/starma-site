@@ -1,0 +1,24 @@
+# Cloudflare Pages redirects: old mystarma.com address -> new page (301 = permanent).
+# These carry the old site's Google rankings and saved links over to the new pages.
+
+# Old site pages
+/about                 /about-us/                  301
+/about/                /about-us/                  301
+/adult-martial-arts    /teen-adult-martial-arts/   301
+/adult-martial-arts/   /teen-adult-martial-arts/   301
+/after-school          /after-school-program/      301
+/after-school/         /after-school-program/      301
+/classes               /#programs                  301
+/classes/              /#programs                  301
+/questions             /contact-us/                301
+/questions/            /contact-us/                301
+/contact               /contact-us/                301
+/contact/              /contact-us/                301
+/blog                  /                           301
+/blog/*                /                           301
+# /kids-martial-arts and /summer-camp keep the same address on the new site.
+
+# Short forms
+/privacy               /privacy-policy/            301
+/locations/west        /locations/west-gainesville/ 301
+/locations/north       /locations/north-gainesville/ 301
