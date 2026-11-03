@@ -8,6 +8,6 @@ export default defineConfig({
   site: 'https://www.mystarma.com',
   trailingSlash: 'always',
   build: { format: 'directory' },
-  integrations: [sitemap({ filter: (page) => !page.includes('/admin/') })],
+  integrations: [sitemap()],
   vite: { plugins: [tailwindcss()] },
 });

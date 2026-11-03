@@ -51,22 +51,6 @@ npm run preview    # previews the finished build
 | Colors, spacing, fonts | `src/styles/global.css` |
 | Photos | `public/images/` (keep the same file name to swap a photo in place) |
 
-## Team editor (`/admin/`)
-
-A private page where the team requests website changes. Claude makes each change and Justin approves it before it goes live.
-
-1. A team member signs in at **www.mystarma.com/admin/** (Cloudflare Access sends a one-time code to their email; only `ALLOWED_EDITORS` in `wrangler.jsonc` can get in).
-2. They pick the page, describe the change, and optionally attach a photo. This files a GitHub issue labeled `site-edit` (photos go to the `edit-uploads` branch).
-3. The **Claude website edits** GitHub Action (`.github/workflows/claude-site-edit.yml`) makes the change on a branch and opens a pull request, following `CLAUDE.md`.
-4. Cloudflare posts a **preview link** on the pull request. Justin checks it and clicks **Merge** to publish, or comments `@claude …` to ask for changes.
-
-One-time setup:
-- **Cloudflare Access** (Zero Trust, free): an application covering `www.mystarma.com/admin` and `www.mystarma.com/api`, with a policy allowing the three team emails. Put its team domain and Application Audience (AUD) tag in `wrangler.jsonc` → `ACCESS_TEAM_DOMAIN` / `ACCESS_AUD`.
-- **GitHub token for the editor:** a fine-grained token for this repo with *Contents* and *Issues* read/write, saved in Cloudflare as the Worker secret `GITHUB_TOKEN`.
-- **Anthropic API key:** saved in GitHub as the repository secret `ANTHROPIC_API_KEY` (usage is billed per edit).
-
-Until all three are set up, the editor stays locked and the public site is unaffected.
-
 ## Forms
 
 All forms send to the Google Apps Script in `FORM_ENDPOINT`. That script routes each submission to `westgv@` or `northgv@` based on the location the family picks ("Not sure yet" goes to West). Phone is required and email is optional. Text-message consent is recorded with the exact wording and a timestamp. If a send ever fails, the family sees the location's email and phone with their details pre-filled.

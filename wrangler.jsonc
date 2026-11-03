@@ -1,25 +1,11 @@
 {
-  // Cloudflare deployment settings.
-  // The built Astro site (dist/) is served as static files. Only /api/* runs the Worker
-  // (worker/index.js), which powers the private team editor at /admin/.
+  // Cloudflare deployment settings: serves the built Astro site (dist/) as static files.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "starma-site",
-  "main": "worker/index.js",
   "compatibility_date": "2025-09-01",
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page",
-    "run_worker_first": ["/api/*"]
-  },
-  "vars": {
-    "GITHUB_REPO": "scoby-starma/starma-site",
-    // Who may use the team editor (must also be allowed in the Cloudflare Access policy).
-    "ALLOWED_EDITORS": "scoby@mystarma.com,westgv@mystarma.com,northgv@mystarma.com",
-    // Filled in after Cloudflare Access is set up. Until then the editor API stays locked.
-    "ACCESS_TEAM_DOMAIN": "",
-    "ACCESS_AUD": ""
+    "not_found_handling": "404-page"
   }
-  // Secret set in the Cloudflare dashboard (never in this file): GITHUB_TOKEN
 }

@@ -1,6 +1,6 @@
 # Star Martial Arts website: editing guide for Claude
 
-This is the public website for Star Martial Arts (StarMA), a family-focused martial arts school in Gainesville, FL, founded in 2006. It's built with Astro, Tailwind CSS (utilities only, no preflight) and TypeScript, and deploys to Cloudflare from `main`. Team members file edit requests from `/admin/`. Your job is to make each change exactly as requested, open a pull request, and let the owner (Justin Scoby) approve it.
+This is the public website for Star Martial Arts (StarMA), a family-focused martial arts school in Gainesville, FL, founded in 2006. It's built with Astro, Tailwind CSS (utilities only, no preflight) and TypeScript, and deploys to Cloudflare from `main`. Edits are requested by the owner (Justin Scoby) in chat. Make each change exactly as requested.
 
 ## Where things live
 
@@ -20,9 +20,9 @@ This is the public website for Star Martial Arts (StarMA), a family-focused mart
 
 ## Hard rules
 
-- **Never invent facts.** No reviews, testimonials, awards, rankings, statistics, credentials, belt ranks, prices, or dates that aren't in the request or already on the site. If a request needs a fact you don't have, ask on the issue and stop.
-- **Don't change the SMS consent wording or the Privacy Policy & SMS Terms page** (it's legal-cleared and tied to A2P 10DLC approval). If asked to, comment on the issue that it needs Justin's sign-off and stop.
-- **Don't change** `FORM_ENDPOINT`, `wrangler.jsonc`, `worker/`, `.github/`, or this file unless the request is explicitly about them and comes from Justin (scoby@mystarma.com).
+- **Never invent facts.** No reviews, testimonials, awards, rankings, statistics, credentials, belt ranks, prices, or dates that aren't in the request or already on the site. If a request needs a fact you don't have, ask first.
+- **Don't change the SMS consent wording or the Privacy Policy & SMS Terms page** (it's legal-cleared and tied to A2P 10DLC approval). If asked to, confirm it has legal sign-off first.
+- **Don't change** `FORM_ENDPOINT` or `wrangler.jsonc` unless the request is explicitly about them.
 - **Navigation stays exactly five items:** Home, About Us, Locations, Programs (dropdown), Contact Us, plus the Get Started button.
 - **Brand:** black `#000000`, red `#E10600`, white `#FFFFFF`. Never recreate or modify the logo.
 - **Wording to keep:** "Gainesville’s Best After School Program" and "Gainesville’s Best Summer Camp" are department brand names, not ranking claims. Use "Mat Chat" (that spelling). Present "Early is on Time" as preparation and respect; never use "late is unforgivable".
@@ -33,17 +33,9 @@ This is the public website for Star Martial Arts (StarMA), a family-focused mart
 
 ## Photos
 
-Photos attached to a request are on the `edit-uploads` branch under `requests/`. To use one:
-1. `git checkout origin/edit-uploads -- requests/<file>`
-2. Convert to WebP, max 1600 px on the long side, under about 300 KB. For example:
-   `npx --yes sharp-cli -i requests/<file> -o public/images/<name>.webp resize 1600 1600 --fit inside -f webp -q 80`
-   (or Python Pillow if available). Use a short descriptive lowercase name.
-3. Use it as `<img class="bgi" src="/images/<name>.webp" alt="<describe the photo>" width="…" height="…" loading="lazy" decoding="async">` inside a `has-bgi` container, matching how nearby photos are placed.
-4. Delete `requests/` from the working tree before committing; only the optimized file goes in.
-Use real, specific alt text. Don't add photos of identifiable children unless the request says permission is confirmed.
+Convert new photos to WebP, max 1600 px on the long side, under about 300 KB, with a short lowercase name in `public/images/`. Place them as `<img class="bgi" src="/images/<name>.webp" alt="<describe the photo>" width="…" height="…" loading="lazy" decoding="async">` inside a `has-bgi` container, matching nearby photos. Use real, specific alt text.
 
-## Before opening the PR
+## Before publishing
 
 - `npm run build` must succeed.
-- Write the PR description for a non-technical owner: what changed, on which page, and anything they should double-check on the preview.
-- One request = one branch (`edit/issue-<number>`) = one PR, with "Closes #<number>" in the body.
+- Check the changed page on a phone-sized screen as well as desktop.

@@ -19,9 +19,9 @@ interface Props {
   schema?: object[];
   /** Page class on <main> (some page-specific styles target it), e.g. pg-after */
   pageClass?: string;
-  /** Keep this page out of Google (used for /admin/). */
+  /** Keep this page out of Google (e.g. private pages). */
   noindex?: boolean;
-  /** Hide the public header/footer/Get Started (used for /admin/). */
+  /** Hide the public header/footer/Get Started (e.g. private pages). */
   bare?: boolean;
 }
 const { title, description, image = SITE.defaultImage, schema = [], pageClass, noindex = false, bare = false } = Astro.props;
