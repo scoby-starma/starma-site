@@ -1,0 +1,89 @@
+---
+/*
+ * Private team editor. Protected by Cloudflare Access; only ALLOWED_EDITORS can use it.
+ * Requests become GitHub issues; Claude prepares the change; Justin approves it before it goes live.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const PAGES = [
+  'Home',
+  'About Us',
+  'Locations',
+  'West Gainesville',
+  'North Gainesville',
+  'Kids Martial Arts',
+  'Teen & Adult Martial Arts',
+  'After School Program',
+  'Summer Camp',
+  'Contact Us',
+  'Privacy Policy & SMS Terms',
+  'Header / menu',
+  'Footer',
+  'Whole site',
+  'Something else',
+];
+const KINDS = ['Fix wording or a typo', 'Update information (hours, prices, dates, people)', 'Swap or add a photo', 'Add new content', 'Remove something', 'Other'];
+---
+<BaseLayout title="Team Editor | Star Martial Arts" description="Private editing screen for the Star Martial Arts team." noindex bare pageClass="pg-admin">
+<section class="ah"><div class="w" style="padding-top:40px;padding-bottom:40px"><a class="logo" href="/" aria-label="Star Martial Arts home"><span class="lg" role="img" aria-label="Star Martial Arts"></span></a><p class="lab eb" style="margin-top:28px">Team editor</p><h1 class="d" style="font-size:clamp(40px,6vw,72px);margin:12px 0 14px">Request a website change</h1><p class="lead" style="font-size:18px;max-width:640px">Describe what should change. Claude prepares it with a preview link, and it goes live once Justin approves.</p><p id="who" style="color:#bbb;margin-top:14px;font-size:15px"></p></div></section>
+
+<section class="sec ld"><div class="w"><div class="ldg">
+<div><h2 class="hdg" style="margin:0 0 16px;font-size:36px">Tips for a quick, accurate change</h2><ul style="font-size:17px;color:#444;line-height:1.7;padding-left:20px"><li>Paste the exact words you want, in quotes.</li><li>Say where on the page: “the second FAQ” or “under the photo of the van.”</li><li>For a photo swap, attach the photo and say which one it replaces.</li><li>Facts only: no reviews, awards, or prices we haven’t confirmed.</li></ul>
+<h3 style="margin-top:32px;font:700 13px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#777">Recent requests</h3><ul id="recent" style="list-style:none;padding:0;margin:12px 0 0;font-size:15px"><li style="color:#777">Loading…</li></ul></div>
+
+<form id="edf" novalidate>
+<label for="ed-n">Your name</label><input id="ed-n" name="name" autocomplete="name">
+<label for="ed-page">Which page?</label><select id="ed-page" name="page" required><option value="">Choose a page</option>{PAGES.map((p) => <option>{p}</option>)}</select><p class="er" role="alert"></p>
+<label for="ed-kind">Type of change</label><select id="ed-kind" name="kind">{KINDS.map((k) => <option>{k}</option>)}</select>
+<label for="ed-d">What should change?</label><textarea id="ed-d" name="details" rows="7" required placeholder="Example: On the Summer Camp page, change the hours to “7:30 AM to 6:00 PM.”"></textarea><p class="er" role="alert"></p>
+<label for="ed-photo">Photo (optional, up to 8 MB)</label><input id="ed-photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif"><p class="er" role="alert"></p>
+<button class="btn p" type="submit">Send Request</button>
+<div class="ls" role="status" aria-live="polite"></div>
+</form>
+</div></div></section>
+
+<script>
+  const $ = (s: string) => document.querySelector(s) as HTMLElement;
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c] as string);
+  async function api(path: string, init?: RequestInit) {
+    const r = await fetch(path, { credentials: 'same-origin', ...init });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(data.error || 'Something went wrong.');
+    return data;
+  }
+  async function loadRecent() {
+    try {
+      const items = await api('/api/requests');
+      $('#recent').innerHTML = items.length
+        ? items.map((i: any) => `<li style="padding:8px 0;border-bottom:1px solid #ddd"><a href="${i.url}" target="_blank" rel="noopener" style="font-weight:600">#${i.number}</a> ${esc(i.title)} <span style="color:${i.state === 'open' ? '#b45309' : '#15803d'};font-weight:600">· ${i.state === 'open' ? 'In progress' : 'Done'}</span></li>`).join('')
+        : '<li style="color:#777">No requests yet.</li>';
+    } catch (e: any) {
+      $('#recent').innerHTML = `<li style="color:#777">${esc(e.message)}</li>`;
+    }
+  }
+  api('/api/me').then((d) => ($('#who').textContent = `Signed in as ${d.email}`)).catch((e) => ($('#who').textContent = e.message));
+  loadRecent();
+
+  const f = document.getElementById('edf') as HTMLFormElement;
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const er = f.querySelectorAll('.er'), st = f.querySelector('.ls') as HTMLElement;
+    const page = (f.elements.namedItem('page') as HTMLSelectElement).value;
+    const details = (f.elements.namedItem('details') as HTMLTextAreaElement).value.trim();
+    const photo = (f.elements.namedItem('photo') as HTMLInputElement).files?.[0];
+    er[0].textContent = page ? '' : 'Please choose a page.';
+    er[1].textContent = details ? '' : 'Please describe the change.';
+    er[2].textContent = photo && photo.size > 8 * 1024 * 1024 ? 'That photo is over 8 MB.' : '';
+    if (!page || !details || er[2].textContent) return;
+    const btn = f.querySelector('[type=submit]') as HTMLButtonElement;
+    btn.disabled = true; st.innerHTML = '<p style="margin-top:14px">Sending…</p>';
+    try {
+      const d = await api('/api/requests', { method: 'POST', body: new FormData(f) });
+      st.innerHTML = `<p class="ok" role="status"><b>Request #${d.number} sent.</b> Claude will prepare the change and a preview link. Justin approves it before it goes live.</p>`;
+      f.reset(); loadRecent();
+    } catch (err: any) {
+      st.innerHTML = `<p class="nb" style="margin-top:14px">${esc(err.message)}</p>`;
+    } finally { btn.disabled = false; }
+  });
+</script>
+</BaseLayout>

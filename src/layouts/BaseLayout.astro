@@ -19,8 +19,12 @@ interface Props {
   schema?: object[];
   /** Page class on <main> (some page-specific styles target it), e.g. pg-after */
   pageClass?: string;
+  /** Keep this page out of Google (used for /admin/). */
+  noindex?: boolean;
+  /** Hide the public header/footer/Get Started (used for /admin/). */
+  bare?: boolean;
 }
-const { title, description, image = SITE.defaultImage, schema = [], pageClass } = Astro.props;
+const { title, description, image = SITE.defaultImage, schema = [], pageClass, noindex = false, bare = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 const ogImage = new URL(image, SITE.url).href;
 ---
@@ -31,7 +35,7 @@ const ogImage = new URL(image, SITE.url).href;
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content={description}>
-<link rel="canonical" href={canonical}>
+{noindex ? <meta name="robots" content="noindex, nofollow"> : <link rel="canonical" href={canonical}>}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="sitemap" href="/sitemap-index.xml">
 <meta property="og:type" content="website">
@@ -53,12 +57,12 @@ const ogImage = new URL(image, SITE.url).href;
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
-<Header />
+{!bare && <Header />}
 <main id="main" class={pageClass}>
 <slot />
 </main>
-<Footer />
-<GetStartedDialog />
+{!bare && <Footer />}
+{!bare && <GetStartedDialog />}
 <script>
   import '../scripts/site.ts';
 </script>

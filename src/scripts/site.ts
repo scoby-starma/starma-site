@@ -88,8 +88,8 @@ function openGS(p, l) {
 
 /* ---------- Navigation ---------- */
 const bg = $('#bg'), nav = $('#nav');
-function closeNav() { nav.classList.remove('open'); bg.setAttribute('aria-expanded', 'false'); bg.setAttribute('aria-label', 'Open menu'); }
-bg.onclick = () => {
+function closeNav() { if (!nav) return; nav.classList.remove('open'); bg.setAttribute('aria-expanded', 'false'); bg.setAttribute('aria-label', 'Open menu'); }
+if (bg) bg.onclick = () => {
   const x = nav.classList.toggle('open');
   bg.setAttribute('aria-expanded', x);
   bg.setAttribute('aria-label', x ? 'Close menu' : 'Open menu');
@@ -97,8 +97,8 @@ bg.onclick = () => {
 
 document.addEventListener('click', (e) => {
   const g = e.target.closest('[data-gs]');
-  if (g) { e.preventDefault(); openGS(g.dataset.p, g.dataset.l); return; }
-  if (e.target.closest('[data-x]') || e.target === dlg) dlg.close();
+  if (g && dlg) { e.preventDefault(); openGS(g.dataset.p, g.dataset.l); return; }
+  if (dlg && (e.target.closest('[data-x]') || e.target === dlg)) dlg.close();
   const o = e.target.closest('.opt');
   if (o) { S[o.dataset.k] = o.dataset.v; render(); }
   if (e.target.closest('[data-back]')) { S.l && !S.fl ? (S.l = null) : (S.p = null); render(); }
